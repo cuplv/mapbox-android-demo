@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import timber.log.Timber;
 
 import static com.mapbox.mapboxsdk.style.expressions.Expression.get;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.literal;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.sum;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillExtrusionColor;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillExtrusionHeight;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.fillExtrusionOpacity;
@@ -64,7 +66,7 @@ public class MarathonExtrusionActivity extends AppCompatActivity implements OnMa
           style.addLayer(new FillExtrusionLayer("course", "coursedata").withProperties(
             fillExtrusionColor(Color.YELLOW),
             fillExtrusionOpacity(0.7f),
-            fillExtrusionHeight(get("e"))));
+            fillExtrusionHeight(sum(literal(6000), get("e")))));
 
         } catch (URISyntaxException exception) {
           Timber.d(exception);

@@ -5,6 +5,8 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -124,7 +126,11 @@ public class BuildingOutlineActivity extends AppCompatActivity implements
 
       // Retrieve the building Feature that is displayed in the middle of the map
       List<Feature> features = mapboxMap.queryRenderedFeatures(pixel, "building");
+
+
       if (features.size() > 0) {
+        Log.d("BuildingOutlineActivity", "feature = " + features.get(0).toJson());
+
         if (features.get(0).geometry() instanceof Polygon) {
           Polygon buildingFeature = (Polygon) features.get(0).geometry();
           // Build a list of Point objects from the building Feature's coordinates
