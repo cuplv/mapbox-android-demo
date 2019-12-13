@@ -447,4 +447,6 @@
     <string name="thick_bordered_circle_border_difference">Border difference: %1$d kilometers</string>
     <string name="tap_on_map_to_move_bordered_circle">Tap on the map to move the bordered circle</string>
 
+    <!-- Property icon setting-->
+    <string name="toast_icon_property_info">This Feature\'s icon id is %1$s</string>
 </resources>
