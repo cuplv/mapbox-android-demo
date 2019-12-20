@@ -1,5 +1,5 @@
 build          = "gradlew"
-arguments      = [ "assembleAndroidTest" ]
+arguments      = [ "compileGlobalDebugSources" ]
 jdk11          = false
 androidVersion = 28
 tools          = []
