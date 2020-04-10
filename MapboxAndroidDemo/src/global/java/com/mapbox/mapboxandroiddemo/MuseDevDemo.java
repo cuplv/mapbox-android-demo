@@ -51,13 +51,13 @@ public class MuseDevDemo extends AppCompatActivity {
                 if (database.hasPoint(point, 200)) {
                   Toast.makeText(MuseDevDemo.this,
                       R.string.activity_demo_point_exists,
-                      Toast.LENGTH_SHORT);
+                      Toast.LENGTH_SHORT).show();
                 } else {
                   database.insert(point);
                   mapboxMap.addMarker(new MarkerOptions().position(point));
                   Toast.makeText(MuseDevDemo.this,
                       R.string.activity_demo_point_added,
-                      Toast.LENGTH_LONG);
+                      Toast.LENGTH_LONG).show();
                 }
                 return true;
               }

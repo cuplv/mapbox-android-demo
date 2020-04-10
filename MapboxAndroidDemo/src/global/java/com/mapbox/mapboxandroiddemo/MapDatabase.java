@@ -45,6 +45,7 @@ public class MapDatabase extends SQLiteOpenHelper {
     db.beginTransaction();
     try {
       db.insert("Points", null, values);
+      db.setTransactionSuccessful();
     } finally {
       db.endTransaction();
     }
@@ -64,11 +65,14 @@ public class MapDatabase extends SQLiteOpenHelper {
         double distance = readPoint.distanceTo(point);
 
         if (distance <= max_distance) {
+          cursor.close();
+          db.close();
           return true;
         }
       }
     }
 
+    cursor.close();
     db.close();
     return false;
   }
@@ -88,7 +92,7 @@ public class MapDatabase extends SQLiteOpenHelper {
         points.add(p);
       }
     }
-
+    cursor.close();
     db.close();
     return points;
   }
