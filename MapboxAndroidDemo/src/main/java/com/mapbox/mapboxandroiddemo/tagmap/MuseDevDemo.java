@@ -60,11 +60,11 @@ public class MuseDevDemo extends AppCompatActivity implements MapboxMap.OnMapCli
     // Record a new point when clicking the map
     if (database.hasPoint(point, 200)) {
       Toast.makeText(MuseDevDemo.this,
-          R.string.activity_demo_point_exists,  Toast.LENGTH_SHORT);
+          R.string.activity_demo_point_exists,  Toast.LENGTH_SHORT).show();
     } else {
       database.insert(point);
       activityMapbox.addMarker(new MarkerOptions().position(point));
-      Toast.makeText(MuseDevDemo.this, R.string.activity_demo_point_added, Toast.LENGTH_LONG);
+      Toast.makeText(MuseDevDemo.this, R.string.activity_demo_point_added, Toast.LENGTH_LONG).show();
     }
     return true;
   }
