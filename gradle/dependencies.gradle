@@ -63,7 +63,8 @@ ext {
             wearableUiX      : '1.0.0',
     ]
 
-    pluginVersion = [
+
+   pluginVersion = [
             checkstyle          : '8.2',
             firebasePerformance : '1.2.1',
             gradle              : '3.4.2',

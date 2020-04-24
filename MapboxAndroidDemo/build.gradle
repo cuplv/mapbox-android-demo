@@ -17,8 +17,6 @@ android {
         targetCompatibility 1.8
     }
 
-
-
     defaultConfig {
         applicationId "com.mapbox.mapboxandroiddemo"
 
