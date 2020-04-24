@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+     <string name="activity_demo_title">Record my pins!</string>
+     <string name="activity_demo_description">Record and view different pins on a map!</string>
+     <string name="activity_demo_point_exists">A point closer to 200 meters already exists in the map!</string>
+     <string name="activity_demo_point_added">Inserted a new point in the map</string>
+</resources>
