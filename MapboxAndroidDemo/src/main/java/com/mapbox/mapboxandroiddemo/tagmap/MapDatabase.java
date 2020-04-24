@@ -45,6 +45,7 @@ public class MapDatabase extends SQLiteOpenHelper {
     db.beginTransaction();
     try {
       db.insert("Points", null, values);
+      db.setTransactionSuccessful();
     } finally {
       db.endTransaction();
     }
@@ -67,6 +68,7 @@ public class MapDatabase extends SQLiteOpenHelper {
           return true;
         }
       }
+      cursor.close();
     }
 
     db.close();
@@ -87,6 +89,7 @@ public class MapDatabase extends SQLiteOpenHelper {
         LatLng p = new LatLng(cursor.getDouble(0), cursor.getDouble(1), cursor.getDouble(2));
         points.add(p);
       }
+      cursor.close();
     }
 
     db.close();
